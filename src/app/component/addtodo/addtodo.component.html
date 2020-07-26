@@ -1,0 +1,32 @@
+<div class="p-12">
+  <h2>{{isEditing ? 'EDIT' : 'ADD'}} YOUR TODO</h2>
+  <form (ngSubmit)="addTodo(f)" id="ngForm" #f="ngForm" novalidate>
+    <mat-card>
+      <div fxFlexFill>
+        <mat-form-field appearance="outline" class="full-width-field">
+          <mat-label>Enter Title</mat-label>
+          <input class="form-control" matInput placeholder="I want to learn angular" id="title"
+                 [(ngModel)]="formData.title" name="title"
+                 required>
+        </mat-form-field>
+      </div>
+      <div fxFlexFill>
+        <mat-form-field appearance="outline" class="full-width-field">
+          <mat-label>Enter Description</mat-label>
+          <input class="form-control" matInput placeholder="Complete basics of ngrx or explore ngxs and akita"
+                 id="desc" [(ngModel)]="formData.desc" name="desc"
+                 required>
+        </mat-form-field>
+      </div>
+      <div style="margin-bottom:-40px">
+        <div fxFlex="100" fxlayout="row" fxLayoutAlign="end center">
+          <button form="ngForm" [disabled]="f.invalid" color="accent"
+                  mat-fab aria-label="Example icon button with a delete icon">
+            <mat-icon>{{isEditing ? 'edit' : 'add'}}</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+</div>
+

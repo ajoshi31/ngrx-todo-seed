@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.shrink-x {
+  transform: scale(0.9);
+}
+
+.text-muted {
+  color: #666;
+}
