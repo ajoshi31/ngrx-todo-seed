@@ -1,7 +1,6 @@
 import * as TodoActions from '../actions/todo.actions';
 import {IToDoState} from "../state/todo.state";
 import {ITodo} from "../../models/todo";
-import {createEntityAdapter, EntityState, EntityAdapter} from '@ngrx/entity';
 
 export const initialState: IToDoState = {
   todos: [],
