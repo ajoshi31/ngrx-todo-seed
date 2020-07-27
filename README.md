@@ -11,3 +11,5 @@ To run mock node server run `node server.js` in seperate terminal
 Run `ng build` for a dev server and do npm start to run the both application on same server.
 Navigate to `http://localhost:4000/`. 
 
+![alt text](screen.png)
+
