@@ -1,9 +1,16 @@
-<mat-toolbar color="primary">
-  <h1>
-    NGRX: TODO APP
-  </h1>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span> NGRX: TODO APP</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
 </mat-toolbar>
-
 <div class="content">
   <div fxLayoutAlign="center start" fxFlex="100">
     <div fxFlex.sm="100" fxFlex="50" fxFlex.xs="100" class="center">
