@@ -12,6 +12,7 @@ import {
 import {TodoService} from "../../services/todo.service";
 import {ITodo} from "../../models/todo";
 import {ITodoHttp} from "../../models/http-todo";
+import {catchError} from "rxjs/internal/operators";
 
 @Injectable()
 export class TodoEffects {
@@ -19,10 +20,12 @@ export class TodoEffects {
   @Effect()
   getUsers$ = this._actions$.pipe(
     ofType<GetTodos>(<string>TodoActionTypes.LOAD_TODOS),
-    switchMap(() => this._todoService.getTodos()),
-    switchMap(function (item: ITodoHttp) {
-      return of(new GetTodosSuccess(item));
-    })
+    switchMap(() => this._todoService.getTodos().pipe(
+      switchMap((item: ITodoHttp) => {
+        return of(new GetTodosSuccess(item));
+      }),
+      catchError(() => "") // call error action
+    ))
   );
 
   constructor(private _todoService: TodoService,
